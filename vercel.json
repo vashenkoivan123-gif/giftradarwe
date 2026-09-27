@@ -1,0 +1,16 @@
+{
+    "version": 2,
+    "public": false,
+    "rewrites": [
+        { "source": "/webapp/(.*)", "destination": "/webapp/$1" }
+    ],
+    "headers": [
+        {
+            "source": "/api/(.*)",
+            "headers": [
+                { "key": "Cache-Control", "value": "s-maxage=300, stale-while-revalidate" },
+                { "key": "Access-Control-Allow-Origin", "value": "*" }
+            ]
+        }
+    ]
+}
